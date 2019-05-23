@@ -1,9 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { withRouter } from "react-router-dom";
 import {getTopicsAction} from '../redux/actions/topic-action'
 
-import CardPost from './card-post'
+import CardTopic from './card-topic'
 
 class ListTopic extends React.Component{
 
@@ -16,8 +15,8 @@ class ListTopic extends React.Component{
         return (
             <div>
                 {
-                    list.map((post, index) => {
-                        return <CardPost post={post} key={index}/>
+                    list.map((topic, index) => {
+                        return <CardTopic topic={topic} key={index}/>
                     })
                 }
             </div>
@@ -27,8 +26,8 @@ class ListTopic extends React.Component{
 
 
 const mapStateToProps = (state) => {
-    const {isLoading, list} = state.topicState;
-    return {isLoading, list};
+    const {list} = state.topicState;
+    return {list};
   }
   
   const mapDispatchToProps = (dispatch) => {
@@ -39,4 +38,4 @@ const mapStateToProps = (state) => {
     }
   }
   
-  export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ListTopic))
+  export default connect(mapStateToProps, mapDispatchToProps)(ListTopic)

@@ -1,6 +1,7 @@
 import {
     getTopics,
-    createTopic
+    createTopic,
+    vote,
 } from '../../service/topic-service';
 
 import {
@@ -40,6 +41,20 @@ export const createTopicAction = (model) => {
     return (dispatch, getState, extraArgument) => {
         dispatch(startLoadingAction);
         return createTopic(model)
+            .then(_ => {
+                return MESSAGE.success;
+            })
+            .catch(_ => {
+                throw new Error(MESSAGE.fail)
+            })
+            .finally(dispatch(stopLoadingAction))
+    }
+}
+
+export const voteAction = (model) => {
+    return (dispatch, getState, extraArgument) => {
+        dispatch(startLoadingAction);
+        return vote(model)
             .then(_ => {
                 return MESSAGE.success;
             })

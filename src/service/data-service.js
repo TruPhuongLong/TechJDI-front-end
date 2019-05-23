@@ -15,3 +15,9 @@ export const post = (url, model) => {
     return axios.post(url, model)
         .then(res => res.data)
 }
+
+export const put = (url, model) => {
+    console.log(model)
+    return axios.put(url, model)
+        .then(res => res.data)
+}
