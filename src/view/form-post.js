@@ -7,13 +7,13 @@ class FormPost extends React.Component {
 
     state = {
         title: "",
-        body: "",
+        content: "",
     }
 
     onSubmit = (event) => {
         event.preventDefault();
-        const {title, body} = this.state;
-        this.props.createTopic({title, body})
+        const {title, content} = this.state;
+        this.props.createTopic({title, content})
     }
 
     _onChange = (event) => {
@@ -25,7 +25,7 @@ class FormPost extends React.Component {
     }
 
     render() {
-        const {title, body} = this.state;
+        const {title, content} = this.state;
         return (
             <form onSubmit={this.onSubmit}>
                 <div className="form-group">
@@ -41,14 +41,14 @@ class FormPost extends React.Component {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="body">Body:</label>
+                    <label htmlFor="content">content:</label>
                     <input 
                         type="text" 
                         className="form-control" 
-                        id="body" 
-                        placeholder="Enter body" 
-                        name="body" 
-                        value={body}
+                        id="content" 
+                        placeholder="Enter content" 
+                        name="content" 
+                        value={content}
                         onChange={this._onChange}
                     />
                 </div>

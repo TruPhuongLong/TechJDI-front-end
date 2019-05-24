@@ -6,7 +6,8 @@ import {
 
 import {
     GET_TOPIC,
-    CREATE_TOPIC
+    CREATE_TOPIC,
+    SORT
 } from './type-action'
 import {
     startLoadingAction,
@@ -62,5 +63,12 @@ export const voteAction = (model) => {
                 throw new Error(MESSAGE.fail)
             })
             .finally(dispatch(stopLoadingAction))
+    }
+}
+
+export const sortAction = (sort) => {
+    return {
+        type: SORT,
+        payload: sort
     }
 }

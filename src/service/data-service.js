@@ -5,6 +5,8 @@ import axios from 'axios';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 export const get = (url) => {
+    console.log('go here and url is: ', url)
+
     return axios.get(url)
         .then(res => {
             return res.data

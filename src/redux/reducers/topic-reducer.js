@@ -3,7 +3,8 @@ import {
     GET_TOPIC,
     CREATE_TOPIC,
     START_LOADING,
-    STOP_LOADING
+    STOP_LOADING,
+    SORT
 } from '../actions/type-action';
 
 export default (state = initState.topicState, action) => {
@@ -23,6 +24,11 @@ export default (state = initState.topicState, action) => {
             return {
                 ...state,
                 ...action.payload
+            }
+        case SORT:
+            return {
+                ...state,
+                sort: action.payload
             }
         default:
             return state;

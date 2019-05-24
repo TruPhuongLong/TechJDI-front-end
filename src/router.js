@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
-import ListTopic from './view/list-post';
+import ListTopic from './view/list-topic';
 import FormPost from './view/form-post'
 
 class Routes extends React.Component {
