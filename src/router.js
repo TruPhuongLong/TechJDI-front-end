@@ -10,7 +10,7 @@ class Routes extends React.Component {
   render(){
     return (
       <Switch>
-        <Route path="/get" exact component={ListTopic} />
+        <Route path="/" exact component={ListTopic} />
         <Route path="/post" exact component={FormPost} />
     </Switch>
     )
